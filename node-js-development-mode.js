@@ -70,6 +70,10 @@ dev_server =
 
 	to_relative_path: function(in_project_path)
 	{
+		// is absolute path
+		if (in_project_path.indexOf(':') >= 0 || in_project_path.indexOf('/') === 0)
+			return in_project_path
+			
 		return this.options.project_directory + '/' + in_project_path
 	},
 	
